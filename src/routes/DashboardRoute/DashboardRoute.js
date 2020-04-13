@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './DashboardRoute.scss'
 
 class DashboardRoute extends Component {
   render() {
