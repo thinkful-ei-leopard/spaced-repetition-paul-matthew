@@ -1,3 +1,16 @@
 .RegistrationForm {
-  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label, .input {
+  display: block;
+  margin: .4rem auto;
+  text-align: center;
+}
+
+.input-group {
+  
 }

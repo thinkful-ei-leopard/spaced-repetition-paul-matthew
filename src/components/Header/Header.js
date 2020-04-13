@@ -45,7 +45,7 @@ class Header extends Component {
       <header>
         <h1>
           <Link className="spaced-repetition-header" to="/">
-            Spaced Repetition
+            Language Teacher
           </Link>
         </h1>
         {TokenService.hasAuthToken()
