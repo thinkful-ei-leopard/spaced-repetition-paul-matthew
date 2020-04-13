@@ -1,0 +1,42 @@
+@import '../../styles/_variables';
+@import '../../styles/breakpoints';
+
+header {
+  background-color: var(--main);
+  height: 80px;
+  padding: 0.5rem;
+  width: 100%;
+  border-bottom: 2px solid var(--green);
+}
+
+.spaced-repetition-header {
+  text-decoration: none;
+  color: var(--green);
+  font-size: 1.5rem;
+  display: block;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.login-link,
+.register-link {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.login-link:hover,
+.login-link:focus,
+.register-link:hover,
+.register-link:focus,
+.logout-link:hover,
+.logout-link:focus {
+  color: var(--yellow);
+}
+
+nav {
+  text-align: center;
+  display: block;
+}
