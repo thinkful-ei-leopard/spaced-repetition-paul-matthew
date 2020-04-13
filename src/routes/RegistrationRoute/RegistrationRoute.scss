@@ -1,0 +1,45 @@
+.intro-text-paragraph {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.language-teacher {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+.language-icon {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.sign-up-header {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+.sign-up-button {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.ask-account {
+  text-decoration: none;
+  font-size: .9rem;
+  text-align: center;
+  margin: 1rem auto 2rem;
+  color: var(--white);
+}

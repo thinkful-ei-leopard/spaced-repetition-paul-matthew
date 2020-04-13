@@ -10,7 +10,7 @@ export function Label({ className, ...props }) {
 
 export const Input =  React.forwardRef(({ className, ...props }, ref) => {
   return (
-    <input className={cx('Input', className)} type='text' ref={ref} {...props} />
+    <input className={cx('Input', className)} autoComplete="off" type='text' ref={ref} {...props} />
   )
 })
 

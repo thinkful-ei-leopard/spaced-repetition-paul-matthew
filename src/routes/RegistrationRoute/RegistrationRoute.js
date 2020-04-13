@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
+import './RegistrationRoute.scss';
 
 class RegistrationRoute extends Component {
   static defaultProps = {
@@ -15,15 +17,26 @@ class RegistrationRoute extends Component {
 
   render() {
     return (
-      <section className="intro-text">
+      <section className="intro-section">
+        <h2 className="language-teacher">Language Teacher</h2>
+
         <p className="intro-text-paragraph">
           Practice learning a language with the spaced repetition revision
           technique.
         </p>
-        <h2>Sign up</h2>
-        <RegistrationForm
-          onRegistrationSuccess={this.handleRegistrationSuccess}
+        <img
+          className="language-icon"
+          src={require('../../images/language-icon.png')}
+          alt="language icon"
         />
+        <div className="intro-text">
+          <h2 className="sign-up-header">Sign up</h2>
+          <RegistrationForm
+            onRegistrationSuccess={this.handleRegistrationSuccess}
+          />
+        </div>
+        <Link className="ask-account" to="/login">Already have an account?</Link>
+
       </section>
     );
   }

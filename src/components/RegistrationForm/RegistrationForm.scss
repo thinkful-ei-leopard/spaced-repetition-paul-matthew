@@ -3,14 +3,42 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin: 1rem auto;
 }
 
-.label, .input {
+.label,
+.input {
   display: block;
-  margin: .4rem auto;
+  margin: 0.5rem auto;
   text-align: center;
 }
 
+.input {
+  width: 150px;
+  height: 20px;
+}
+
+.label {
+  font-size: 0.9rem;
+}
+
 .input-group {
-  
+  margin-bottom: .2rem;
+}
+
+.input-group:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.sign-up-button {
+  width: 150px;
+  height: 50px;
+  outline: none;
+  border: 2px solid var(--black);
+  background-color: var(--green);
+}
+
+.sign-up-button:hover {
+  cursor: pointer;
+  background-color: var(--yellow);
 }
