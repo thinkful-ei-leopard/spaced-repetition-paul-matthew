@@ -1,3 +1,6 @@
+@import '../../styles/_variables';
+@import '../../styles/breakpoints';
+
 .intro-text-paragraph {
   color: white;
   margin-bottom: 1rem;
@@ -11,6 +14,15 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  margin: 0 auto;
+}
+
+@include mobilePortrait {
+  .intro-section {
+    width: 500px;
+    // display: flex;
+    // justify-content: center;
+  }
 }
 
 .language-teacher {
@@ -27,18 +39,18 @@
 
 .sign-up-header {
   font-size: 2rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .sign-up-button {
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .ask-account {
   text-decoration: none;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: center;
   margin: 1rem auto 2rem;
   color: var(--white);

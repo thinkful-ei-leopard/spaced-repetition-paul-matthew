@@ -30,13 +30,14 @@ class RegistrationRoute extends Component {
           alt="language icon"
         />
         <div className="intro-text">
-          <h2 className="sign-up-header">Sign up</h2>
+          <h3 className="sign-up-header">Sign up</h3>
           <RegistrationForm
             onRegistrationSuccess={this.handleRegistrationSuccess}
           />
         </div>
-        <Link className="ask-account" to="/login">Already have an account?</Link>
-
+        <Link className="ask-account" to="/login">
+          Already have an account?
+        </Link>
       </section>
     );
   }
