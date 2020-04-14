@@ -1,0 +1,28 @@
+@import '../../styles/_variables';
+@import '../../styles/breakpoints';
+
+.WordList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-words-header {
+  color: var(--white);
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+li {
+  list-style: none;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+li:hover {
+  font-weight: bold;
+  color: var(--yellow);
+  cursor: pointer;
+}

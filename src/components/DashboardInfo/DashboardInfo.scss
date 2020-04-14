@@ -1,0 +1,64 @@
+@import '../../styles/_variables';
+@import '../../styles/breakpoints';
+
+// .language-icon {
+//   margin: 0 auto;
+//   display: block;
+// }
+
+.start-button {
+  width: 150px;
+  height: 50px;
+  outline: none;
+  border: 2px solid var(--black);
+  background-color: var(--green);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.current-language {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.language-highlight {
+  color: var(--yellow);
+}
+
+.start-button:hover {
+  cursor: pointer;
+  background-color: var(--yellow);
+}
+
+.start-button-text {
+  color: var(--black);
+  text-decoration: none;
+  margin-top: .75rem;
+}
+
+.total-score-box {
+  border: 2px solid var(--light);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.total-score-box p {
+  color: var(--white);
+}
+
+.total-score-box p:first-of-type {
+  margin-bottom: .5rem;
+}
+
+.correct-count {
+  color: var(--green);
+  font-weight: bold;
+}
+
+.incorrect-count {
+  color: var(--pink);
+  font-weight: bold;
+}

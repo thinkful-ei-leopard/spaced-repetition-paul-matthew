@@ -1,0 +1,21 @@
+
+
+.word-score-box {
+  border: 2px solid var(--light);
+  padding: .8rem;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+}
+
+.word-score-box p {
+  color: var(--white);
+}
+
+.word-score-box p:first-of-type {
+  margin-bottom: .5rem;
+}
+
+.hidden {
+  display: none;
+}

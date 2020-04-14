@@ -2,22 +2,15 @@
 @import '../../styles/breakpoints';
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--main);
   height: 80px;
-  padding: 0.5rem;
+  padding: 1rem;
   width: 100%;
   border-bottom: 2px solid var(--green);
   margin-bottom: 1rem;
-}
-
-.spaced-repetition-header {
-  text-decoration: none;
-  color: var(--green);
-  font-size: 1.5rem;
-  display: block;
-  text-align: center;
-  padding-bottom: 0.5rem;
-  text-transform: uppercase;
 }
 
 .login-link,
@@ -45,4 +38,39 @@ nav {
 .welcome-user {
   text-align: center;
   margin: 0 auto;
+  color: var(--white);
+  margin-bottom: .5rem;
+  display: block;
+  font-weight: bold;
+}
+
+.language-icon {
+  max-width: 50px;
+  fill: var(--green);
+  margin-top: .5rem;
+}
+
+.language-icon:hover {
+  fill: var(--yellow);
+}
+
+.language-teacher-header {
+  display: none;
+}
+
+.logout-link {
+  font-weight: 500;
+}
+
+@include mobileLandscape {
+  .language-icon {
+    display: none;
+  }
+
+  .language-teacher-header {
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.5rem;
+  }
 }

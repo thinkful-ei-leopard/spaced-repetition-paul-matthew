@@ -44,8 +44,15 @@ class Header extends Component {
     return (
       <header>
         <h1>
-          <Link className="spaced-repetition-header" to="/">
+          <Link className="language-teacher-header" to="/">
             Language Teacher
+          </Link>
+          <Link className="spaced-repetition-header" to="/">
+            <img
+              className="language-icon"
+              src={require('../../images/language-icon.svg')}
+              alt="language icon"
+            />
           </Link>
         </h1>
         {TokenService.hasAuthToken()
