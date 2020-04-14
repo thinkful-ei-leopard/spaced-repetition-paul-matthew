@@ -1,5 +1,5 @@
 @import '../../styles/_variables';
-@import '../../styles/breakpoints';
+@import '../../styles/_breakpoints';
 
 .RegistrationForm {
   display: flex;
@@ -25,11 +25,11 @@
   font-size: 0.9rem;
 }
 
-.input-group {
+.registration-input-group {
   margin-bottom: .2rem;
 }
 
-.input-group:last-of-type {
+.registration-input-group:last-of-type {
   margin-bottom: 1.5rem;
 }
 
@@ -39,6 +39,7 @@
   outline: none;
   border: 2px solid var(--black);
   background-color: var(--green);
+  transition: background-color .2s;
 }
 
 .sign-up-button:hover {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import UserContext from './UserContext';
-
 const LanguageContext = React.createContext({
   language: {},
   words: [],

@@ -1,5 +1,5 @@
 @import '../../styles/_variables';
-@import '../../styles/breakpoints';
+@import '../../styles/_breakpoints';
 
 // .language-icon {
 //   margin: 0 auto;
@@ -17,6 +17,12 @@
   font-weight: bold;
   text-align: center;
   text-decoration: none;
+  transition: background-color .2s;
+}
+
+.start-button:hover {
+  cursor: pointer;
+  background-color: var(--yellow);
 }
 
 .current-language {
@@ -26,11 +32,6 @@
 
 .language-highlight {
   color: var(--yellow);
-}
-
-.start-button:hover {
-  cursor: pointer;
-  background-color: var(--yellow);
 }
 
 .start-button-text {

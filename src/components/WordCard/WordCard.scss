@@ -1,0 +1,65 @@
+@import '../../styles/_variables';
+@import '../../styles/_breakpoints';
+
+.WordCard {
+  width: 500px;
+  height: 470px;
+  border: 2px solid var(--white);
+  margin: 0 auto;
+  padding: 2rem;
+  margin: 1rem;
+}
+
+@include mobileLandscape {
+  .WordCard {
+    height: 400px;
+  }
+}
+
+.translate-header {
+  text-align: center;
+  color: var(--yellow);
+  margin-bottom: 1.5rem;
+}
+
+.original-word {
+  color: var(--white);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.original-word {
+  margin-bottom: 2.5rem;
+}
+
+.times-correct,
+.times-incorrect {
+  color: white;
+  margin: 0.4rem;
+  text-align: center;
+}
+
+.word-score-count {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 0.75rem auto;
+}
+
+@include mobileLandscape {
+  .word-score-count {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-direction: row;
+  }
+}
+
+.correct-number {
+  color: var(--green);
+}
+
+.incorrect-number {
+  color: var(--pink);
+}

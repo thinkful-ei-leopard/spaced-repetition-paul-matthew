@@ -24,11 +24,11 @@ class RegistrationRoute extends Component {
           Practice learning a language with the spaced repetition revision
           technique.
         </p>
-        <img
+        {/* <img
           className="language-icon"
           src={require('../../images/language-icon.png')}
           alt="language icon"
-        />
+        /> */}
         <div className="intro-text">
           <h3 className="sign-up-header">Sign up</h3>
           <RegistrationForm

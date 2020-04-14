@@ -5,7 +5,7 @@ function Word(props) {
   const { word } = props;
   return (
     <div onClick={(e) => handleWordClick(word.original)}>
-      <p className="word-name">{word.original}</p>
+      <h4 className="word-name">{word.original}</h4>
       <div id={word.original} className="word-score-box hidden">
         <p>
           total correct:{' '}

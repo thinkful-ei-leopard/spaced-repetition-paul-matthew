@@ -1,0 +1,72 @@
+@import '../../styles/_variables';
+@import '../../styles/_breakpoints';
+
+.AnswerForm {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-label {
+  color: var(--white);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.answer-label {
+  margin-bottom: 0.5rem;
+  color: var(--light);
+}
+
+.answer-input {
+  height: 20px;
+  width: 150px;
+}
+
+.skip-button,
+.answer-button {
+  width: 150px;
+  height: 50px;
+  outline: none;
+  border: 2px solid var(--black);
+  background-color: var(--green);
+  font-size: 1rem;
+  font-weight: bold;
+  margin: .5rem;
+  transition: background-color .2s;
+}
+
+.answer-button:hover,
+.skip-button:hover {
+  cursor: pointer;
+  background-color: var(--yellow);
+}
+
+.skip-button {
+  // margin-top: 1rem;
+  background-color: var(--light);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@include mobileLandscape {
+  .button-group {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .skip-button,
+  .answer-button {
+    margin: 1rem;
+  }
+}

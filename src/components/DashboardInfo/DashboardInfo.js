@@ -12,9 +12,9 @@ export class DashboardInfo extends Component {
           Practice learning a language with the spaced repetition revision
           technique.
         </p>
-        <h3 className="current-language">
+        <h2 className="current-language">
           Language: <span className="language-highlight">{language.name}</span>
-        </h3>
+        </h2>
         {/* <img
           className="language-icon"
           src={require('../../images/language-icon.png')}
@@ -22,10 +22,10 @@ export class DashboardInfo extends Component {
         />{' '} */}
         <div className="total-score-box">
           <p>
-      total correct: <span className="correct-count">{language.total_score || 0}</span>
+      Total correct: <span className="correct-count">{language.total_score || 0}</span>
           </p>
           <p>
-      total incorrect: <span className="incorrect-count">{incorrect}</span>
+      Total incorrect: <span className="incorrect-count">{incorrect}</span>
           </p>
         </div>
 
