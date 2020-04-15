@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WordCard from '../../components/WordCard/WordCard';
+import AnswerCard from '../../components/AnswerCard/AnswerCard';
 import LanguageContext from '../../contexts/LanguageContext';
 import LanguageApiService from '../../services/language-api-service';
 import './LearningRoute.scss';
@@ -24,7 +25,10 @@ class LearningRoute extends Component {
     this.context.setWordCorrectCount(word.wordCorrectCount);
     this.context.setWordIncorrectCount(word.wordIncorrectCount);
     this.setState({ loading: false });
-    console.log(this.context);
+  }
+
+  handleFormSubmit() {
+    
   }
 
   render() {
@@ -33,6 +37,7 @@ class LearningRoute extends Component {
       totalScore,
       wordCorrectCount,
       wordIncorrectCount,
+      answered,
     } = this.context;
 
     console.log(this.context);
@@ -41,15 +46,19 @@ class LearningRoute extends Component {
       return <></>;
     }
 
-    return (
-      <section className="LearningRoute">
-        <WordCard
-          nextWord={nextWord}
-          totalScore={totalScore}
-          wordCorrectCount={wordCorrectCount}
-          wordIncorrectCount={wordIncorrectCount}></WordCard>
-      </section>
-    );
+    if (!answered) {
+      return (
+        <section className="LearningRoute">
+          <WordCard
+            nextWord={nextWord}
+            totalScore={totalScore}
+            wordCorrectCount={wordCorrectCount}
+            wordIncorrectCount={wordIncorrectCount} />
+        </section>
+      );
+    } else {
+      return <AnswerCard totalScore={totalScore} />;
+    }
   }
 }
 

@@ -5,16 +5,15 @@ import AnswerForm from '../AnswerForm/AnswerForm';
 export class WordCard extends Component {
   render() {
     const {
-      words,
       nextWord,
       wordCorrectCount,
       wordIncorrectCount,
+      totalScore,
     } = this.props;
-
-    console.log(wordCorrectCount, wordIncorrectCount, nextWord);
 
     return (
       <section className="WordCard">
+        <p className="total-score">Your total score is: {totalScore} </p>
         <h2 className="translate-header">Translate the word:</h2>
         <p className="original-word">"{nextWord}"</p>
         <AnswerForm />

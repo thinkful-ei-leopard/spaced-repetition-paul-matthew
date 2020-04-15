@@ -7,12 +7,15 @@ const LanguageContext = React.createContext({
   totalScore: 0,
   wordCorrectCount: 0,
   wordIncorrectCount: 0,
+  answered: false,
+  answerData: {},
   setLanguage: () => {},
   setWords: () => {},
   setNextWord: () => {},
   setTotalScore: () => {},
   setWordCorrectCount: () => {},
   setWordIncorrectCount: () => {},
+  setAnswered: () => {},
 });
 
 export default LanguageContext;
@@ -25,6 +28,8 @@ export class LanguageProvider extends Component {
     totalScore: 0,
     wordCorrectCount: 0,
     wordIncorrectCount: 0,
+    answered: false,
+    answerData: {}
   };
 
   setLanguage = (language) => {
@@ -63,14 +68,24 @@ export class LanguageProvider extends Component {
     this.setState({ wordIncorrectCount });
   };
 
+  setAnswered = (answered) => {
+    this.setState({ answered });
+  };
+
+  setAnswerData = (answerData) => {
+    this.setState({ answerData });
+  }
+
   render() {
     const value = {
       language: this.state.language,
       words: this.state.words,
       nextWord: this.state.nextWord,
       totalScore: this.state.totalScore,
+      answered: this.state.answered,
       wordCorrectCount: this.state.wordCorrectCount,
       wordIncorrectCount: this.state.wordIncorrectCount,
+      answerData: this.state.answerData,
       setLanguage: this.setLanguage,
       getTotalIncorrect: this.getTotalIncorrect,
       setWords: this.setWords,
@@ -78,6 +93,8 @@ export class LanguageProvider extends Component {
       setTotalScore: this.setTotalScore,
       setWordCorrectCount: this.setWordCorrectCount,
       setWordIncorrectCount: this.setWordIncorrectCount,
+      setAnswered: this.setAnswered,
+      setAnswerData: this.setAnswerData
     };
     return (
       <LanguageContext.Provider value={value}>

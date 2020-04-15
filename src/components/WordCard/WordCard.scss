@@ -3,7 +3,7 @@
 
 .WordCard {
   width: 500px;
-  height: 470px;
+  height: 510px;
   border: 2px solid var(--white);
   margin: 0 auto;
   padding: 2rem;
@@ -12,7 +12,7 @@
 
 @include mobileLandscape {
   .WordCard {
-    height: 400px;
+    height: 450px;
   }
 }
 
@@ -62,4 +62,12 @@
 
 .incorrect-number {
   color: var(--pink);
+}
+
+.total-score {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: .9rem;
+  font-weight: bold;
 }

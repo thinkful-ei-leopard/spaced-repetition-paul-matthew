@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
-import { Input, Required, Label } from '../Form/Form';
+import { Input, Label } from '../Form/Form';
 import './AnswerForm.scss';
 import Button from '../Button/Button';
-import config from '../../config';
 import LanguageApiService from '../../services/language-api-service';
+import LanguageContext from '../../contexts/LanguageContext';
 
 export class AnswerForm extends Component {
   state = { error: null, value: '' };
 
+  static contextType = LanguageContext;
+
   handleAnswerSubmit = async (e) => {
     const { value } = this.state;
     console.log(value);
-    LanguageApiService.postGuess(value);
+    await LanguageApiService.postGuess(value)
+      .then(data => {
+        this.context.setAnswered(true);
+        this.context.setAnswerData(data);
+        this.context.setTotalScore(data.totalScore);
+      });
+  };
+
+  handleSkip = () => {
+
   };
 
   handleChange = (event) => {
@@ -36,6 +47,7 @@ export class AnswerForm extends Component {
             id="answer-input"
             name="answer"
             value={this.state.value}
+            required
           />
         </div>
 
@@ -50,7 +62,10 @@ export class AnswerForm extends Component {
             }}>
             Submit
           </Button>
-          <Button type="submit" className="skip-button">
+          <Button
+            type="submit"
+            className="skip-button"
+            onClick={this.handleSkip}>
             Try Later
           </Button>
         </div>

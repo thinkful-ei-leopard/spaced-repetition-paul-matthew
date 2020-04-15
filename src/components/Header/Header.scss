@@ -75,5 +75,10 @@ svg:hover {
     font-size: 1.5rem;
     text-decoration: none;
     color: var(--white);
+    transition: color 0.2s;
+  }
+
+  .language-teacher-header:hover {
+    color: var(--green);
   }
 }

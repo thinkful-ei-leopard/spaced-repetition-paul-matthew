@@ -31,7 +31,7 @@ const LanguageApiService = {
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(guess),
+      body: JSON.stringify({guess}),
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );

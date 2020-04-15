@@ -8,7 +8,8 @@
 
 .start-button {
   width: 150px;
-  height: 50px;
+  height: 60px;
+  padding: .4rem 0 1rem;
   outline: none;
   border: 2px solid var(--black);
   background-color: var(--green);
@@ -17,7 +18,7 @@
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
 }
 
 .start-button:hover {
@@ -37,7 +38,7 @@
 .start-button-text {
   color: var(--black);
   text-decoration: none;
-  margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 
 .total-score-box {
@@ -51,7 +52,7 @@
 }
 
 .total-score-box p:first-of-type {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .correct-count {
