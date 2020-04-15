@@ -3,24 +3,19 @@ import './WordCard.scss';
 import AnswerForm from '../AnswerForm/AnswerForm';
 
 export class WordCard extends Component {
-  state = { loading: true };
+  // state = { loading: true };
 
-  componentDidMount() {
-    this.setState({ loading: false });
-  }
+  // componentDidMount() {
+  //   this.setState({ loading: false });
+  // }
 
   render() {
-    const { words } = this.props;
-    console.log(words);
-
-    if (this.state.loading === true) {
-      return <></>;
-    }
+    const { words, nextWord } = this.props;
 
     return (
       <section className="WordCard">
         <h2 className="translate-header">Translate the word:</h2>
-        <p className="original-word">"cerveza"</p>
+        <p className="original-word">"{nextWord}"</p>
         <AnswerForm />
         <div className="word-score-count">
           <p className="times-correct">

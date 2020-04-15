@@ -5,6 +5,8 @@ import LanguageApiService from '../../services/language-api-service';
 import './LearningRoute.scss';
 
 class LearningRoute extends Component {
+  state = { loading: true };
+
   static contextType = LanguageContext;
 
   componentDidMount() {
@@ -13,15 +15,24 @@ class LearningRoute extends Component {
 
   async getLanguageAndWords() {
     const language = await LanguageApiService.getLanguage();
-    this.context.setLanguage(language.language);
-    this.context.setWords(language.words);
+    const words = await LanguageApiService.getHead();
+    await this.context.setLanguage(language.language);
+    await this.context.setWords(language.words);
+    await this.context.setNextWord(words.nextWord);
+    this.setState({ loading: false });
   }
 
   render() {
-    const { words } = this.context;
+    const { words, nextWord } = this.context;
+
+    if (this.state.loading === true) {
+      console.log('loading', words, nextWord);
+      return <></>;
+    }
+
     return (
       <section className="LearningRoute">
-        <WordCard words={words}></WordCard>
+        <WordCard words={words} nextWord={nextWord}></WordCard>
       </section>
     );
   }
