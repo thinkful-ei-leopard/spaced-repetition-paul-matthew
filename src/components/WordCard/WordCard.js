@@ -3,14 +3,15 @@ import './WordCard.scss';
 import AnswerForm from '../AnswerForm/AnswerForm';
 
 export class WordCard extends Component {
-  // state = { loading: true };
-
-  // componentDidMount() {
-  //   this.setState({ loading: false });
-  // }
-
   render() {
-    const { words, nextWord } = this.props;
+    const {
+      words,
+      nextWord,
+      wordCorrectCount,
+      wordIncorrectCount,
+    } = this.props;
+
+    console.log(wordCorrectCount, wordIncorrectCount, nextWord);
 
     return (
       <section className="WordCard">
@@ -19,10 +20,12 @@ export class WordCard extends Component {
         <AnswerForm />
         <div className="word-score-count">
           <p className="times-correct">
-            Times correct: <span className="correct-number">7</span>{' '}
+            Times correct:{' '}
+            <span className="correct-number">{wordCorrectCount}</span>{' '}
           </p>
           <p className="times-incorrect">
-            Times incorrect: <span className="incorrect-number">10</span>{' '}
+            Times incorrect:{' '}
+            <span className="incorrect-number">{wordIncorrectCount}</span>{' '}
           </p>
         </div>
       </section>

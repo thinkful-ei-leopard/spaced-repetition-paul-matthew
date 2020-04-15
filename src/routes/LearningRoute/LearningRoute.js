@@ -14,25 +14,38 @@ class LearningRoute extends Component {
   }
 
   async getLanguageAndWords() {
-    const language = await LanguageApiService.getLanguage();
-    const words = await LanguageApiService.getHead();
-    await this.context.setLanguage(language.language);
-    await this.context.setWords(language.words);
-    await this.context.setNextWord(words.nextWord);
+    // const language = await LanguageApiService.getLanguage();
+    // this.context.setLanguage(language.language);
+    // this.context.setWords(language.words);
+    const word = await LanguageApiService.getHead();
+    this.context.setNextWord(word.nextWord);
+    this.context.setTotalScore(word.totalScore);
+    this.context.setWordCorrectCount(word.wordCorrectCount);
+    this.context.setWordIncorrectCount(word.wordIncorrectCount);
     this.setState({ loading: false });
   }
 
   render() {
-    const { words, nextWord } = this.context;
+    const {
+      nextWord,
+      totalScore,
+      wordCorrectCount,
+      wordIncorrectCount,
+    } = this.context;
+
+    console.log(this.context);
 
     if (this.state.loading === true) {
-      console.log('loading', words, nextWord);
       return <></>;
     }
 
     return (
       <section className="LearningRoute">
-        <WordCard words={words} nextWord={nextWord}></WordCard>
+        <WordCard
+          nextWord={nextWord}
+          totalScore={totalScore}
+          wordCorrectCount={wordCorrectCount}
+          wordIncorrectCount={wordIncorrectCount}></WordCard>
       </section>
     );
   }
