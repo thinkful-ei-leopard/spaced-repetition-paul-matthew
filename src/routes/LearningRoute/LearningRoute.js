@@ -14,15 +14,17 @@ class LearningRoute extends Component {
   }
 
   async getLanguageAndWords() {
-    // const language = await LanguageApiService.getLanguage();
-    // this.context.setLanguage(language.language);
-    // this.context.setWords(language.words);
+    const language = await LanguageApiService.getLanguage();
+    this.context.setLanguage(language.language);
+    this.context.setWords(language.words);
+
     const word = await LanguageApiService.getHead();
     this.context.setNextWord(word.nextWord);
     this.context.setTotalScore(word.totalScore);
     this.context.setWordCorrectCount(word.wordCorrectCount);
     this.context.setWordIncorrectCount(word.wordIncorrectCount);
     this.setState({ loading: false });
+    console.log(this.context);
   }
 
   render() {

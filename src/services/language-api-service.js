@@ -28,15 +28,13 @@ const LanguageApiService = {
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${TokenService.getAuthToken()}`,
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(guess)
-    })
-      .then(res => 
-          (!res.ok)
-            ? res.json().then(e => Promise.reject(e))
-            : res.json());
+      body: JSON.stringify(guess),
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
 };
 
