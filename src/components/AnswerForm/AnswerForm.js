@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Label } from '../Form/Form';
+import { Link } from 'react-router-dom';
 import './AnswerForm.scss';
 import Button from '../Button/Button';
 import LanguageApiService from '../../services/language-api-service';
@@ -13,7 +14,7 @@ export class AnswerForm extends Component {
   handleAnswerSubmit = async (e) => {
     e.preventDefault();
     const { value } = this.state;
-    console.log(value);
+    this.setState({ value: '' });
     await LanguageApiService.postGuess(value).then((data) => {
       this.context.setAnswered(true);
       this.context.setAnswerData(data);
@@ -23,9 +24,7 @@ export class AnswerForm extends Component {
         this.context.setWordIncorrectCount(this.context.wordIncorrectCount + 1);
       }
       this.context.setTotalScore(data.totalScore);
-      this.setState({ value: '' });
     });
-
     this.props.submit(value);
   };
 
@@ -60,9 +59,9 @@ export class AnswerForm extends Component {
           <Button type="submit" className="answer-button">
             Submit
           </Button>
-          <Button className="skip-button" onClick={this.handleSkip}>
-            Try Later
-          </Button>
+          <Link to="/">
+            <Button className="skip-button">Try Later</Button>
+          </Link>
         </div>
       </form>
     );

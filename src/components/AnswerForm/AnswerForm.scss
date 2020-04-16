@@ -38,8 +38,8 @@
   background-color: var(--green);
   font-size: 1rem;
   font-weight: bold;
-  margin: .5rem;
-  transition: background-color .2s;
+  margin: 0.5rem;
+  transition: background-color 0.2s;
 }
 
 .answer-button:hover,
@@ -49,8 +49,11 @@
 }
 
 .skip-button {
-  // margin-top: 1rem;
+  text-decoration: none;
+  color: var(--black);
   background-color: var(--light);
+  text-align: center;
+  margin: 0 auto;
 }
 
 .button-group {
