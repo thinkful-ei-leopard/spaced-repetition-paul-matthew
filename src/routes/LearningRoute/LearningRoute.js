@@ -15,25 +15,23 @@ class LearningRoute extends Component {
   }
 
   getLanguageAndWords() {
-    LanguageApiService.getLanguage()
-      .then(language => {
-        this.context.setLanguage(language.language);
-        this.context.setWords(language.words);
-      });
+    LanguageApiService.getLanguage().then((language) => {
+      this.context.setLanguage(language.language);
+      this.context.setWords(language.words);
+    });
 
-    LanguageApiService.getHead()
-      .then(word => {
-        this.context.setNextWord(word.nextWord);
-        this.context.setTotalScore(word.totalScore);
-        this.context.setWordCorrectCount(word.wordCorrectCount);
-        this.context.setWordIncorrectCount(word.wordIncorrectCount);
-        this.setState({ loading: false });
-      });
+    LanguageApiService.getHead().then((word) => {
+      this.context.setNextWord(word.nextWord);
+      this.context.setTotalScore(word.totalScore);
+      this.context.setWordCorrectCount(word.wordCorrectCount);
+      this.context.setWordIncorrectCount(word.wordIncorrectCount);
+      this.setState({ loading: false });
+    });
   }
 
-  handleFormSubmit(guess) {
+  handleFormSubmit = (guess) => {
     this.setState({ guess });
-  }
+  };
 
   render() {
     const {
@@ -43,8 +41,6 @@ class LearningRoute extends Component {
       wordIncorrectCount,
       answered,
     } = this.context;
-
-    console.log(totalScore)
 
     if (this.state.loading === true) {
       return <></>;

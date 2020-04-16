@@ -19,6 +19,14 @@
   }
 }
 
+.correct-answer-notify {
+  color: var(--green);
+}
+
+.incorrect-notify {
+  color: var(--pink);
+}
+
 .answer-status-header {
   text-align: center;
   color: var(--white);
@@ -41,7 +49,7 @@
 }
 
 .next-word-button {
-  padding: .7rem;
+  padding: 0.7rem;
   width: 150px;
   height: 80px;
   outline: none;
@@ -62,7 +70,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  margin: .75rem auto 1rem;
+  margin: 0.75rem auto 1rem;
 }
 
 @include mobileLandscape {

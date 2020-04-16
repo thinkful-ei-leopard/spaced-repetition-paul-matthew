@@ -16,6 +16,11 @@ export class AnswerForm extends Component {
     await LanguageApiService.postGuess(value).then((data) => {
       this.context.setAnswered(true);
       this.context.setAnswerData(data);
+      if (data.isCorrect) {
+        this.context.setWordCorrectCount(this.context.wordCorrectCount + 1);
+      } else {
+        this.context.setWordIncorrectCount(this.context.wordIncorrectCount + 1);
+      }
       this.context.setTotalScore(data.totalScore);
     });
 

@@ -7,6 +7,11 @@ export class AnswerCard extends Component {
 
   handleNextWord = () => {
     this.context.setNextWord(this.context.answerData.nextWord);
+    this.context.setWordCorrectCount(this.context.answerData.wordCorrectCount);
+    this.context.setWordIncorrectCount(
+      this.context.answerData.wordIncorrectCount
+    );
+    this.context.setAnswerData({});
     this.context.setAnswered(false);
   };
 
@@ -26,14 +31,20 @@ export class AnswerCard extends Component {
         <h3 className="answer-status-header">
           You are{' '}
           <span className="answer-status">
-            {answerData.isCorrect ? 'correct!' : 'incorrect!'}
+            {answerData.isCorrect ? (
+              <span className="correct-answer-notify">correct!</span>
+            ) : (
+              <span className="incorrect-notify">'incorrect!'</span>
+            )}
           </span>
         </h3>
         <p className="answer-status-subheader">
-          Good guess, but you weren't quite right.
+          {answerData.isCorrect
+            ? 'Awesome job! You got it right!'
+            : "Good guess, but you weren't quite right."}
         </p>
         <p className="correct-answer">
-          The correct translation for {nextWord} was {answerData.answer}.
+          The correct translation for {nextWord} is {answerData.answer}.
         </p>
         <p className="user-guess">Your answer was {this.props.guess}.</p>
 
