@@ -6,7 +6,7 @@ import LanguageApiService from '../../services/language-api-service';
 import './LearningRoute.scss';
 
 class LearningRoute extends Component {
-  state = { loading: true };
+  state = { loading: true, guess: '' };
 
   static contextType = LanguageContext;
 
@@ -14,21 +14,25 @@ class LearningRoute extends Component {
     this.getLanguageAndWords();
   }
 
-  async getLanguageAndWords() {
-    const language = await LanguageApiService.getLanguage();
-    this.context.setLanguage(language.language);
-    this.context.setWords(language.words);
+  getLanguageAndWords() {
+    LanguageApiService.getLanguage()
+      .then(language => {
+        this.context.setLanguage(language.language);
+        this.context.setWords(language.words);
+      });
 
-    const word = await LanguageApiService.getHead();
-    this.context.setNextWord(word.nextWord);
-    this.context.setTotalScore(word.totalScore);
-    this.context.setWordCorrectCount(word.wordCorrectCount);
-    this.context.setWordIncorrectCount(word.wordIncorrectCount);
-    this.setState({ loading: false });
+    LanguageApiService.getHead()
+      .then(word => {
+        this.context.setNextWord(word.nextWord);
+        this.context.setTotalScore(word.totalScore);
+        this.context.setWordCorrectCount(word.wordCorrectCount);
+        this.context.setWordIncorrectCount(word.wordIncorrectCount);
+        this.setState({ loading: false });
+      });
   }
 
-  handleFormSubmit() {
-    
+  handleFormSubmit(guess) {
+    this.setState({ guess });
   }
 
   render() {
@@ -40,7 +44,7 @@ class LearningRoute extends Component {
       answered,
     } = this.context;
 
-    console.log(this.context);
+    console.log(totalScore)
 
     if (this.state.loading === true) {
       return <></>;
@@ -53,11 +57,13 @@ class LearningRoute extends Component {
             nextWord={nextWord}
             totalScore={totalScore}
             wordCorrectCount={wordCorrectCount}
-            wordIncorrectCount={wordIncorrectCount} />
+            wordIncorrectCount={wordIncorrectCount}
+            handleSubmit={this.handleFormSubmit}
+          />
         </section>
       );
     } else {
-      return <AnswerCard totalScore={totalScore} />;
+      return <AnswerCard guess={this.state.guess} />;
     }
   }
 }

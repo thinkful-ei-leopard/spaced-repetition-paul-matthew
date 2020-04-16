@@ -9,14 +9,15 @@ export class WordCard extends Component {
       wordCorrectCount,
       wordIncorrectCount,
       totalScore,
+      handleSubmit,
     } = this.props;
 
     return (
       <section className="WordCard">
-        <p className="total-score">Your total score is: {totalScore} </p>
+        <p className="total-score">Your total score is: {totalScore}</p>
         <h2 className="translate-header">Translate the word:</h2>
         <p className="original-word">"{nextWord}"</p>
-        <AnswerForm />
+        <AnswerForm submit={handleSubmit} />
         <div className="word-score-count">
           <p className="times-correct">
             Times correct:{' '}

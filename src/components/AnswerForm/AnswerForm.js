@@ -13,17 +13,16 @@ export class AnswerForm extends Component {
   handleAnswerSubmit = async (e) => {
     const { value } = this.state;
     console.log(value);
-    await LanguageApiService.postGuess(value)
-      .then(data => {
-        this.context.setAnswered(true);
-        this.context.setAnswerData(data);
-        this.context.setTotalScore(data.totalScore);
-      });
+    await LanguageApiService.postGuess(value).then((data) => {
+      this.context.setAnswered(true);
+      this.context.setAnswerData(data);
+      this.context.setTotalScore(data.totalScore);
+    });
+
+    this.props.submit(value);
   };
 
-  handleSkip = () => {
-
-  };
+  handleSkip = () => {};
 
   handleChange = (event) => {
     this.setState({ value: event.target.value });
@@ -37,12 +36,11 @@ export class AnswerForm extends Component {
         <div role="alert">{error && <p>{error}</p>}</div>
         <div className="input-group">
           <Label className="answer-label" htmlFor="answer-input">
-            {' '}
             Answer:
           </Label>
           <Input
             className="answer-input"
-            // ref={this.firstInput}
+            type="text"
             onChange={this.handleChange}
             id="answer-input"
             name="answer"
@@ -62,10 +60,7 @@ export class AnswerForm extends Component {
             }}>
             Submit
           </Button>
-          <Button
-            type="submit"
-            className="skip-button"
-            onClick={this.handleSkip}>
+          <Button className="skip-button" onClick={this.handleSkip}>
             Try Later
           </Button>
         </div>
