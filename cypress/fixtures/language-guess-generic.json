@@ -2,7 +2,7 @@
   "nextWord": "test-next-word-from-generic-guess",
   "wordCorrectCount": 777,
   "wordIncorrectCount": 777,
-  "totalScore": 777,
+  "totalScore": 999,
   "answer": "test-answer-from-generic-guess",
   "isCorrect": true
 }

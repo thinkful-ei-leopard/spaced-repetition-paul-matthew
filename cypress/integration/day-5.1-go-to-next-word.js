@@ -32,11 +32,11 @@ describe(`User story: Go to next word`, function () {
   });
 
   it(`displays another word after clicking the 'next' button`, () => {
-    cy.get('main button.next-word-button').click();
+    cy.get('button.next-word-button').click();
 
     cy.fixture('language-guess-generic.json').then((languageHeadFixture) => {
       cy.get('main').within(($main) => {
-        cy.get('p')
+        cy.get('p.total-score')
           .eq(0)
           .should(
             'have.text',
@@ -45,7 +45,7 @@ describe(`User story: Go to next word`, function () {
         cy.get('h2')
           .should('have.text', 'Translate the word:')
           .siblings('p.original-word')
-          .should('have.text', languageHeadFixture.nextWord);
+          .should('have.text', `"${languageHeadFixture.nextWord}"`);
       });
     });
 

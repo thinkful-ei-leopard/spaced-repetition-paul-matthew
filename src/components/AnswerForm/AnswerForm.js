@@ -11,6 +11,7 @@ export class AnswerForm extends Component {
   static contextType = LanguageContext;
 
   handleAnswerSubmit = async (e) => {
+    e.preventDefault();
     const { value } = this.state;
     console.log(value);
     await LanguageApiService.postGuess(value).then((data) => {
@@ -22,6 +23,7 @@ export class AnswerForm extends Component {
         this.context.setWordIncorrectCount(this.context.wordIncorrectCount + 1);
       }
       this.context.setTotalScore(data.totalScore);
+      this.setState({ value: '' });
     });
 
     this.props.submit(value);
@@ -55,14 +57,7 @@ export class AnswerForm extends Component {
         </div>
 
         <div className="button-group">
-          <Button
-            type="submit"
-            className="answer-button"
-            onClick={(e) => {
-              e.preventDefault();
-              this.handleAnswerSubmit(this.state.value);
-              this.setState({ value: '' });
-            }}>
+          <Button type="submit" className="answer-button">
             Submit
           </Button>
           <Button className="skip-button" onClick={this.handleSkip}>

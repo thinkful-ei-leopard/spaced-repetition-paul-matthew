@@ -93,9 +93,12 @@ describe(`User story: Answer feedback`, function () {
           );
           cy.get('.correct-answer').should(
             'have.text',
-            `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer}.`
+            `The correct translation for ${languageHeadFixture.nextWord} is ${incorrectFixture.answer}.`
           );
-          cy.get('.user-guess').should('have.text', `Your answer was ${guess}`);
+          cy.get('.user-guess').should(
+            'have.text',
+            `Your answer was ${guess}.`
+          );
           cy.get('button').should('have.text', `Try another word!`);
         });
       });
@@ -141,9 +144,12 @@ describe(`User story: Answer feedback`, function () {
           cy.get('h3').should('have.text', `You are correct!`);
           cy.get('.correct-answer').should(
             'have.text',
-            `The correct translation for ${languageHeadFixture.nextWord} was ${correctFixture.answer}`
+            `The correct translation for ${languageHeadFixture.nextWord} is ${correctFixture.answer}.`
           );
-          cy.get('.user-guess').should('have.text', `Your answer was ${guess}`);
+          cy.get('.user-guess').should(
+            'have.text',
+            `Your answer was ${guess}.`
+          );
           cy.get('button').should('have.text', `Try another word!`);
         });
       });

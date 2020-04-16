@@ -48,8 +48,11 @@ export class AnswerCard extends Component {
         </p>
         <p className="user-guess">Your answer was {this.props.guess}.</p>
 
-        <button className="next-word-button" onClick={this.handleNextWord}>
-          Try another word
+        <button
+          className="next-word-button"
+          type="submit"
+          onClick={this.handleNextWord}>
+          Try another word!
         </button>
 
         <div className="answer-word-score-count">
