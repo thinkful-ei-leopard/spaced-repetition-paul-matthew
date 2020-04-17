@@ -16,11 +16,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "CI=true npm run cypress:run --colors",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "predeploy": "npm run build",
+    "deploy": "now --prod ./build"
   },
   "eslintConfig": {
     "extends": "react-app"
