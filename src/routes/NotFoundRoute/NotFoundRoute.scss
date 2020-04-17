@@ -1,0 +1,24 @@
+@import '../../styles/_variables';
+@import '../../styles/_breakpoints';
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.error-page-header {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.error-header-highlight {
+color: var(--pink);
+}
+
+.error-page-message {
+  color: white;
+}
