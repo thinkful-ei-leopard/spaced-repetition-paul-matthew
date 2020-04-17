@@ -26,6 +26,9 @@ This a demo a version of the app currently in beta. Upcoming features will inclu
 - PostgreSQL
 - SCSS
 
+## Authors
+Matthew Wagaman and Paul Baisley
+
 ## Screenshots
 
 ## <img src="./src/images/screenshots/dashboard.png" align="center" alt="Dashboard View" title="Dashboard View">
