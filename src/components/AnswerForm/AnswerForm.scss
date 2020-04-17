@@ -43,7 +43,9 @@
 }
 
 .answer-button:hover,
-.skip-button:hover {
+.skip-button:hover,
+.answer-button:focus,
+.skip-button:focus {
   cursor: pointer;
   background-color: var(--yellow);
 }
@@ -53,7 +55,7 @@
   color: var(--black);
   background-color: var(--light);
   text-align: center;
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .button-group {

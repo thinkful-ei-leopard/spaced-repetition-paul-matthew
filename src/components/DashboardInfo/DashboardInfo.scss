@@ -21,7 +21,8 @@
   transition: background-color 0.2s;
 }
 
-.start-button:hover {
+.start-button:hover,
+.start-button:focus {
   cursor: pointer;
   background-color: var(--yellow);
 }

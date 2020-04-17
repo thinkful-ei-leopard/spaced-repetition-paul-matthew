@@ -69,7 +69,8 @@
   transition: background-color 0.2s;
 }
 
-.next-word-button:hover {
+.next-word-button:hover,
+.next-word-button:focus{
   cursor: pointer;
   background-color: var(--yellow);
 }

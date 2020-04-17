@@ -81,7 +81,8 @@ svg:focus {
     transition: color 0.2s;
   }
 
-  .language-teacher-header:hover {
+  .language-teacher-header:hover,
+  .language-teacher-header:focus {
     color: var(--green);
   }
 }
