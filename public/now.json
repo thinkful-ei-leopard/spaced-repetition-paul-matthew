@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "alias": "language-teacher",
   "name": "language-teacher",
   "routes": [
     { "handle": "filesystem" },
