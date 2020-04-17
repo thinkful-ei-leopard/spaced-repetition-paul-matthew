@@ -1,4 +1,4 @@
 export default {
-  API_ENDPOINT: 'http://localhost:8000/api',
+  API_ENDPOINT: 'https://language-teacher.herokuapp.com/api',
   TOKEN_KEY: 'LT-client-auth-token',
 }
