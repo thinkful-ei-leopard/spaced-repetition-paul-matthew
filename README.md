@@ -6,7 +6,7 @@ API repo: https://github.com/thinkful-ei-leopard/spaced-repetition-paul-matthew-
 
 ## Summary
 
-Language Teacher is an app for learning new languages using the spaced-repetition revision technique, which is implemented using a linked list to keep track of right and wrong answers.
+<i>Language Teacher</i> is an app for learning new languages using the spaced-repetition revision technique, which is implemented using a linked list to keep track of right and wrong answers.
 
 Users can sign up and login to their personal dashboard, where they can see their current language, current total correct and incorrect scores, along with a list of words to practice and a button to start practicing. Clicking on a word in the dashboard will reveal how many times that word has been answered correctly and incorrectly.
 
