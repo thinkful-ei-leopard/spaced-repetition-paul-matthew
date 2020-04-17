@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './DashboardInfo.scss';
 export class DashboardInfo extends Component {
-
   render() {
     const { language, incorrect } = this.props;
     return (
@@ -12,20 +11,17 @@ export class DashboardInfo extends Component {
           Practice learning a language with the spaced repetition revision
           technique.
         </p>
-        <h2 className="current-language">
+        <h3 className="current-language">
           Language: <span className="language-highlight">{language.name}</span>
-        </h2>
-        {/* <img
-          className="language-icon"
-          src={require('../../images/language-icon.png')}
-          alt="language icon"
-        />{' '} */}
+        </h3>
         <div className="total-score-box">
           <p>
-      Total correct: <span className="correct-count">{language.total_score || 0}</span>
+            Total correct:{' '}
+            <span className="correct-count">{language.total_score || 0}</span>
           </p>
           <p>
-      Total incorrect: <span className="incorrect-count">{incorrect}</span>
+            Total incorrect:{' '}
+            <span className="incorrect-count">{incorrect}</span>
           </p>
         </div>
 

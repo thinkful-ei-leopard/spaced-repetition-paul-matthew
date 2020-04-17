@@ -38,6 +38,14 @@
   font-weight: bold;
 }
 
+.correct-translation-word, .guessed-word {
+  font-weight: bold;
+}
+
+.total-score-number {
+  color: var(--yellow);
+}
+
 .AnswerCard p {
   color: white;
   text-align: center;

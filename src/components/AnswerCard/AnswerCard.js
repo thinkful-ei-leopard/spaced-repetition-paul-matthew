@@ -26,27 +26,34 @@ export class AnswerCard extends Component {
 
     return (
       <div className="AnswerCard">
-        <p className="total-score">Your total score is: {totalScore}</p>
+        <p className="total-score">
+          Your total score is:{' '}
+          <span className="total-score-number">{totalScore}</span>
+        </p>
 
-        <h3 className="answer-status-header">
+        <h2 className="answer-status-header">
           You are{' '}
           <span className="answer-status">
             {answerData.isCorrect ? (
               <span className="correct-answer-notify">correct!</span>
             ) : (
-              <span className="incorrect-notify">'incorrect!'</span>
+              <span className="incorrect-notify">incorrect!</span>
             )}
           </span>
-        </h3>
+        </h2>
         <p className="answer-status-subheader">
           {answerData.isCorrect
             ? 'Awesome job! You got it right!'
             : "Good guess, but you weren't quite right."}
         </p>
         <p className="correct-answer">
-          The correct translation for {nextWord} is {answerData.answer}.
+          The correct translation for {nextWord} is{' '}
+          <span className="correct-translation-word">{answerData.answer}</span>.
         </p>
-        <p className="user-guess">Your answer was {this.props.guess}.</p>
+        <p className="user-guess">
+          Your answer was{' '}
+          <span className="guessed-word">{this.props.guess}</span>.
+        </p>
 
         <button
           className="next-word-button"

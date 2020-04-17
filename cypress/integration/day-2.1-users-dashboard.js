@@ -31,11 +31,11 @@ describe(`User story: User's dashboard`, function () {
   it('has h2 with title, total score, subtitle and link', () => {
     cy.fixture('language.json').then(({ language }) => {
       cy.get('main section').within(($section) => {
-        cy.get('h2').should('contain', language.name);
+        cy.get('h3.current-language').should('contain', language.name);
 
         cy.root().should('contain', `Total correct: ${language.total_score}`);
 
-        cy.get('h3').should('have.text', 'My words');
+        cy.get('h3.my-words-header').should('have.text', 'My words');
       });
     });
   });

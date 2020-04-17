@@ -28,6 +28,11 @@
   font-size: 2rem;
 }
 
+.error-message {
+  color: red;
+  // padding-bottom: 1rem;
+}
+
 @include mobilePortrait {
   .intro-section {
     width: 500px;

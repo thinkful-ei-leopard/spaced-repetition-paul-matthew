@@ -47,7 +47,7 @@ class LoginForm extends Component {
       <form className="LoginForm intro-text" onSubmit={this.handleSubmit}>
         <h2 className="login-header">Login</h2>
 
-        <div role="alert">{error && <p>{error}</p>}</div>
+        <div role="alert" className="error-message">{error && <p>{error}</p>}</div>
 
         <div className="login-input-group">
           <Label className="label" htmlFor="login-username-input">

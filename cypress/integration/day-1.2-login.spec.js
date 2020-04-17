@@ -52,7 +52,7 @@ describe(`User story: Login`, function() {
     cy.visit('/login')
 
     cy.get('main section').within($section => {
-      cy.get('h2').should(
+      cy.get('h2.login-header').should(
         'have.text',
         'Login',
       )

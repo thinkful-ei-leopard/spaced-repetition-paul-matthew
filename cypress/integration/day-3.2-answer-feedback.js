@@ -141,7 +141,7 @@ describe(`User story: Answer feedback`, function () {
             'have.text',
             `Awesome job! You got it right!`
           );
-          cy.get('h3').should('have.text', `You are correct!`);
+          cy.get('h2').should('have.text', `You are correct!`);
           cy.get('.correct-answer').should(
             'have.text',
             `The correct translation for ${languageHeadFixture.nextWord} is ${correctFixture.answer}.`
