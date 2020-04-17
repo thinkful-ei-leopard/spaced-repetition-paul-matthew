@@ -27,7 +27,7 @@ This a demo a version of the app currently in beta. Upcoming features will inclu
 - SCSS
 
 ## Authors
-[Matthew Wagaman](https://github.com/AveraqeDev) and [Paul Baisley]((https://github.com/wavinginspace))
+[Matthew Wagaman](https://github.com/AveraqeDev) and [Paul Baisley](https://github.com/wavinginspace)
 
 ## Screenshots
 
