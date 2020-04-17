@@ -1,6 +1,6 @@
 # Language Teacher
 
-Live:
+Live app:
 
 API repo: https://github.com/thinkful-ei-leopard/spaced-repetition-paul-matthew-api
 
