@@ -3,14 +3,13 @@
 
 .AnswerCard {
   display: flex;
-  justify-self: center;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+  max-width: 500px;
   height: 510px;
   border: 2px solid var(--white);
   padding: 2rem;
-  margin: 1rem auto;
+  margin: 1rem 1rem;
 }
 
 @include mobileLandscape {
