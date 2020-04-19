@@ -20,8 +20,6 @@
 @include mobilePortrait {
   .intro-section {
     width: 500px;
-    // display: flex;
-    // justify-content: center;
   }
 }
 
@@ -31,11 +29,6 @@
   color: var(--green);
   margin-bottom: 1rem;
 }
-
-// .language-icon {
-//   width: 200px;
-//   margin: 0 auto;
-// }
 
 .sign-up-header {
   font-size: 2rem;
@@ -54,4 +47,8 @@
   text-align: center;
   margin: 1rem auto 2rem;
   color: var(--white);
+  transition: color 0.2s;
+  &:hover {
+    color: var(--yellow);
+  }
 }

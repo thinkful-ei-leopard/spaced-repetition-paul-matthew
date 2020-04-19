@@ -63,11 +63,11 @@ export class AnswerCard extends Component {
         </button>
 
         <div className="answer-word-score-count">
-          <p className="times-correct">
+          <p className="answer-times-correct">
             Times correct:{' '}
             <span className="correct-number">{wordCorrectCount}</span>{' '}
           </p>
-          <p className="times-incorrect">
+          <p className="answer-times-incorrect">
             Times incorrect:{' '}
             <span className="incorrect-number">{wordIncorrectCount}</span>{' '}
           </p>
